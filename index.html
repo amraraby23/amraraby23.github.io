@@ -78,17 +78,27 @@ background:#334155;
 }
 
 @keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(30px);
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-to{
-opacity:1;
-transform:translateY(0);
+.timeline{
+border-left:3px solid #38bdf8;
+padding-left:20px;
 }
 
+.timeline-item{
+margin-bottom:40px;
+}
+
+.timeline-item h3{
+margin:0;
+color:#38bdf8;
+}
+
+.timeline-item span{
+color:#94a3b8;
+font-size:14px;
 }
 
 .cv-btn{
@@ -101,8 +111,15 @@ font-weight:bold;
 margin-top:20px;
 }
 
+.counter{
+text-align:center;
+font-size:40px;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
 .icons i{
-font-size:30px;
+font-size:28px;
 margin:10px;
 color:#38bdf8;
 }
@@ -132,6 +149,14 @@ color:#94a3b8;
 
 <section>
 
+<h2>Years of Experience</h2>
+
+<div class="counter" id="experience"></div>
+
+</section>
+
+<section>
+
 <h2>About Me</h2>
 
 <p style="text-align:center;max-width:700px;margin:auto">
@@ -151,9 +176,7 @@ workflow design, data migration, reporting, and operational optimization.
 <div class="skills">
 
 <div class="card">
-
 <h3>Business Analysis</h3>
-
 <ul>
 <li>Requirements Gathering</li>
 <li>Gap Analysis</li>
@@ -161,33 +184,26 @@ workflow design, data migration, reporting, and operational optimization.
 <li>BRD Documentation</li>
 <li>UAT Management</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Data & Systems</h3>
-
 <ul>
 <li>SQL (PostgreSQL)</li>
 <li>Data Migration</li>
 <li>Data Validation</li>
 <li>Reporting</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <h3>Tools</h3>
-
 <ul>
 <li>JIRA</li>
 <li>Azure DevOps</li>
 <li>Postman</li>
 <li>Excel</li>
 </ul>
-
 </div>
 
 </div>
@@ -201,35 +217,89 @@ workflow design, data migration, reporting, and operational optimization.
 <div class="projects">
 
 <div class="card">
-
 <h3>Iraqi Ministry of Trade ERP</h3>
-
-<p>
-Nationwide ERP system supporting 70 warehouses and around
-70 million transactions annually.
-</p>
-
+<p>Nationwide ERP system supporting 70 warehouses and around 70 million transactions annually.</p>
 </div>
 
 <div class="card">
-
 <h3>Zero Touch Monitoring</h3>
-
-<p>
-Telecom monitoring automation saving approximately
-12,500 operational hours per month.
-</p>
-
+<p>Telecom monitoring automation saving approximately 12,500 operational hours per month.</p>
 </div>
 
 <div class="card">
-
 <h3>HR Automation System</h3>
+<p>Automated HR workflows reducing approval cycle time by nearly 70%.</p>
+</div>
 
-<p>
-Automated HR workflows reducing approval cycle time
-by nearly 70%.
-</p>
+</div>
+
+</section>
+
+<section>
+
+<h2>Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>Team Lead & Senior Implementation Specialist</h3>
+<span>Mar 2024 – Present | Cairo</span>
+
+<ul>
+<li>Lead ERP implementation initiatives and coordinate cross-functional teams.</li>
+<li>Oversee requirement validation, system configuration, and deployment activities.</li>
+<li>Support UAT cycles and ensure business alignment before go-live.</li>
+</ul>
+
+<strong>Core Achievements</strong>
+
+<ul>
+<li>Improved implementation delivery efficiency by streamlining requirement clarification and deployment cycles.</li>
+<li>Reduced post-go-live issues through structured validation and stakeholder alignment.</li>
+<li>Enhanced team coordination across business and technical units.</li>
+</ul>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Business Analyst – NTG Clarity</h3>
+<span>June 2022 – Feb 2024 | Cairo</span>
+
+<ul>
+<li>Led nationwide ERP implementation for Iraqi Ministry of Trade (70 warehouses, ~70M annual transactions).</li>
+<li>Conducted requirements gathering, gap analysis, and AS-IS / TO-BE process mapping.</li>
+<li>Prepared BRD documentation and supported UAT activities.</li>
+<li>Validated system data using PostgreSQL and supported ERP configuration.</li>
+</ul>
+
+<strong>Core Achievements</strong>
+
+<ul>
+<li>Reduced order processing time by 60% and inventory loss by 70%.</li>
+<li>Improved HR approval workflows by 70% through automation.</li>
+<li>Saved 12,500 operational hours per month via telecom monitoring automation.</li>
+<li>Improved operational efficiency in banking system modules by 40%.</li>
+</ul>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Technical Support Specialist – IST</h3>
+<span>Nov 2019 – Dec 2020 | Cairo</span>
+
+<ul>
+<li>Assisted in system validation and user support operations.</li>
+</ul>
+
+<strong>Core Achievements</strong>
+
+<ul>
+<li>Reduced recurring technical incidents through root cause identification.</li>
+<li>Improved response time and user satisfaction across supported systems.</li>
+</ul>
 
 </div>
 
@@ -243,9 +313,17 @@ by nearly 70%.
 
 <p style="text-align:center">
 
+Haram, Giza, Egypt
+
+<br><br>
+
+Phone: +201011263081
+
+<br><br>
+
 Email: amraraby23@gmail.com
 
-<br>
+<br><br>
 
 <a href="Amr Araby.2026.pdf" download class="cv-btn">
 Download CV
@@ -263,6 +341,10 @@ Download CV
 <i class="fa-solid fa-envelope"></i>
 </a>
 
+<a href="mailto:amraraby23@gmail.com?subject=Contact from Portfolio">
+<i class="fa-solid fa-paper-plane"></i>
+</a>
+
 </div>
 
 </section>
@@ -272,6 +354,17 @@ Download CV
 © 2026 Amr Araby
 
 </footer>
+
+<script>
+
+var startYear = 2019;
+var currentYear = new Date().getFullYear();
+var experience = currentYear - startYear;
+
+document.getElementById("experience").innerHTML =
+experience + "+ Years Professional Experience";
+
+</script>
 
 </body>
 </html>
