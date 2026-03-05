@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -47,7 +48,6 @@ border:4px solid var(--accent);
 
 h1{
 margin-top:20px;
-font-size:34px;
 }
 
 .btn{
@@ -76,6 +76,16 @@ text-align:center;
 margin-bottom:40px;
 }
 
+/* SUMMARY */
+
+#summary{
+max-width:900px;
+margin:auto;
+line-height:1.8;
+font-size:18px;
+text-align:center;
+}
+
 /* SKILLS */
 
 .skill{
@@ -86,7 +96,6 @@ margin-bottom:20px;
 height:10px;
 background:#334155;
 border-radius:10px;
-overflow:hidden;
 }
 
 .progress{
@@ -155,6 +164,27 @@ font-size:26px;
 cursor:pointer;
 }
 
+/* METRICS */
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:10px;
+margin:20px 0;
+}
+
+.metric{
+background:#f1f5f9;
+padding:10px;
+border-radius:8px;
+text-align:center;
+}
+
+.metric h2{
+margin:0;
+color:#0ea5e9;
+}
+
 /* CONTACT */
 
 form{
@@ -180,17 +210,18 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* DARK BUTTON */
+/* DARK MODE BUTTON */
 
 .theme{
 position:fixed;
 top:20px;
 right:20px;
-cursor:pointer;
 font-size:22px;
+cursor:pointer;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -205,7 +236,7 @@ font-size:22px;
 
 <h1>Amr Araby</h1>
 
-<p>Business Analyst | System Implementer</p>
+<p>Business Analyst | ERP Implementation Specialist</p>
 
 <a class="btn" href="Amr Araby.2026.pdf" download>
 Download CV
@@ -225,40 +256,41 @@ Download CV
 
 </header>
 
+<section id="summary">
+
+<h2>Professional Summary</h2>
+
+<p>
+Results-driven Business Analyst and ERP Implementation Specialist with 4+ years of experience delivering enterprise-scale digital transformation projects across government, banking, telecom, and HR domains.
+
+Proven expertise in requirements gathering, stakeholder management, gap analysis, AS-IS/TO-BE process mapping, BRD documentation, and workflow automation.
+
+Strong background in ERP systems, PostgreSQL (SQL), SDLC (Waterfall), and large-scale process optimization delivering efficiency improvements of up to 60%.
+</p>
+
+</section>
+
 <section>
 
 <h2>Skills</h2>
 
-<div class="skill">
-SQL
-<div class="bar">
-<div class="progress" style="width:90%"></div>
-</div>
+<div class="skill">Business Analysis
+<div class="bar"><div class="progress" style="width:95%"></div></div>
 </div>
 
-<div class="skill">
-Business Analysis
-<div class="bar">
-<div class="progress" style="width:95%"></div>
-</div>
+<div class="skill">ERP Implementation
+<div class="bar"><div class="progress" style="width:92%"></div></div>
 </div>
 
-<div class="skill">
-ERP Implementation
-<div class="bar">
-<div class="progress" style="width:92%"></div>
-</div>
+<div class="skill">PostgreSQL / SQL
+<div class="bar"><div class="progress" style="width:90%"></div></div>
 </div>
 
-<div class="skill">
-Workflow Design
-<div class="bar">
-<div class="progress" style="width:88%"></div>
-</div>
+<div class="skill">Workflow Automation
+<div class="bar"><div class="progress" style="width:88%"></div></div>
 </div>
 
 </section>
-
 
 <section>
 
@@ -284,7 +316,6 @@ Workflow Design
 </div>
 
 </section>
-
 
 <section>
 
@@ -316,7 +347,6 @@ Workflow Design
 
 </section>
 
-
 <section>
 
 <h2>Contact</h2>
@@ -329,14 +359,11 @@ Workflow Design
 
 <textarea placeholder="Your Message"></textarea>
 
-<button type="submit">
-Send Message
-</button>
+<button type="submit">Send Message</button>
 
 </form>
 
 </section>
-
 
 <div id="popup" class="popup">
 
@@ -350,18 +377,91 @@ Send Message
 
 </div>
 
-
 <script>
 
 const projects={
 
-p1:"<h2>Zero Touch</h2><p>Telecom automation system saving 12,500 hours monthly.</p>",
+p1:`
+<h2>Zero Touch – Telecom Network Monitoring Automation</h2>
 
-p2:"<h2>HR App</h2><p>Automated HR approvals improving efficiency by 60%.</p>",
+<p><b>Role:</b> Business Analyst & System Implementer | <b>Duration:</b> 1 Year</p>
 
-p3:"<h2>Food Stuff ERP</h2><p>Nationwide ERP for 70 warehouses.</p>",
+<div class="metrics">
 
-p4:"<h2>JIB Bank</h2><p>Banking enterprise web system improving operations.</p>"
+<div class="metric"><h2>40K+</h2><p>Employees</p></div>
+
+<div class="metric"><h2>190</h2><p>Branches</p></div>
+
+<div class="metric"><h2>12,500</h2><p>Hours Saved</p></div>
+
+</div>
+
+<p>
+Enterprise telecom automation system monitoring network health and eliminating manual inspection.
+</p>
+
+<ul>
+
+<li>BRD & FRD Documentation</li>
+
+<li>Workflow Automation Design</li>
+
+<li>SQL Data Validation</li>
+
+<li>Cross-functional team collaboration</li>
+
+</ul>
+
+<p><b>Tools:</b> JIRA, PostgreSQL, NTG Tools</p>
+`,
+
+p2:`
+<h2>HR App – NTG Clarity</h2>
+
+<div class="metrics">
+
+<div class="metric"><h2>70%</h2><p>Approval Faster</p></div>
+
+<div class="metric"><h2>60%</h2><p>Efficiency Gain</p></div>
+
+<div class="metric"><h2>30%</h2><p>Paper Reduction</p></div>
+
+</div>
+
+<p>HR workflow automation platform covering attendance, leave management and HR requests.</p>
+`,
+
+p3:`
+<h2>Food Stuff ERP – Iraqi Ministry of Trade</h2>
+
+<div class="metrics">
+
+<div class="metric"><h2>60%</h2><p>Faster Orders</p></div>
+
+<div class="metric"><h2>70%</h2><p>Less Inventory Loss</p></div>
+
+<div class="metric"><h2>90%</h2><p>Data Accuracy</p></div>
+
+<div class="metric"><h2>70M</h2><p>Transactions</p></div>
+
+</div>
+
+<p>Nationwide ERP system supporting inventory and procurement operations across 70 warehouses.</p>
+`,
+
+p4:`
+<h2>JIB – Al-Janoob Islamic Bank</h2>
+
+<div class="metrics">
+
+<div class="metric"><h2>40%</h2><p>Efficiency Increase</p></div>
+
+<div class="metric"><h2>4</h2><p>Core Modules</p></div>
+
+</div>
+
+<p>Enterprise banking web system supporting finance, procurement and HR processes.</p>
+`
 
 }
 
