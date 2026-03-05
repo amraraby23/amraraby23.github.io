@@ -11,40 +11,64 @@
 
 <style>
 
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--text:white;
+--accent:#38bdf8;
+}
+
+.light{
+--bg:white;
+--card:#f1f5f9;
+--text:black;
+}
+
 body{
 margin:0;
 font-family:Arial;
-background:#0f172a;
-color:white;
+background:var(--bg);
+color:var(--text);
+transition:.3s;
 }
 
 header{
 text-align:center;
-padding:80px 20px;
-background:#020617;
+padding:60px 20px;
 }
 
 header img{
 width:150px;
+height:150px;
 border-radius:50%;
-margin-bottom:20px;
-border:4px solid #38bdf8;
+object-fit:cover;
+border:4px solid var(--accent);
 }
 
-header h1{
-font-size:48px;
-margin-bottom:10px;
+h1{
+margin-top:20px;
+font-size:34px;
 }
 
-header p{
-font-size:20px;
-color:#94a3b8;
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:var(--accent);
+color:black;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+.social a{
+font-size:25px;
+margin:0 10px;
+color:var(--text);
 }
 
 section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
+padding:60px 10%;
 }
 
 h2{
@@ -52,90 +76,128 @@ text-align:center;
 margin-bottom:40px;
 }
 
-.skills{
+/* SKILLS */
+
+.skill{
+margin-bottom:20px;
+}
+
+.bar{
+height:10px;
+background:#334155;
+border-radius:10px;
+overflow:hidden;
+}
+
+.progress{
+height:10px;
+background:var(--accent);
+}
+
+/* TIMELINE */
+
+.timeline{
+border-left:3px solid var(--accent);
+padding-left:20px;
+}
+
+.timeline-item{
+margin-bottom:30px;
+}
+
+/* PROJECTS */
+
+.projects{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-background:#1e293b;
+.project-card{
+background:var(--card);
 padding:25px;
 border-radius:10px;
-transition:0.4s;
-animation:fadeUp 1s ease;
+cursor:pointer;
+transition:.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-background:#334155;
+.project-card:hover{
+transform:translateY(-6px);
 }
 
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
+/* POPUP */
+
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
 }
 
-.timeline{
-border-left:3px solid #38bdf8;
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:40px;
-}
-
-.timeline-item h3{
-margin:0;
-color:#38bdf8;
-}
-
-.timeline-item span{
-color:#94a3b8;
-font-size:14px;
-}
-
-.cv-btn{
-display:inline-block;
-background:#38bdf8;
+.popup-content{
+background:white;
 color:black;
-padding:12px 20px;
-border-radius:8px;
-font-weight:bold;
-margin-top:20px;
-}
-
-.counter{
-text-align:center;
-font-size:40px;
-color:#38bdf8;
-margin-bottom:20px;
-}
-
-.icons i{
-font-size:28px;
-margin:10px;
-color:#38bdf8;
-}
-
-footer{
-text-align:center;
+width:70%;
+max-height:80%;
+overflow:auto;
 padding:30px;
-background:#020617;
-color:#94a3b8;
+border-radius:10px;
+}
+
+.close{
+float:right;
+font-size:26px;
+cursor:pointer;
+}
+
+/* CONTACT */
+
+form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+input,textarea{
+padding:10px;
+border-radius:6px;
+border:none;
+}
+
+button{
+padding:12px;
+background:var(--accent);
+border:none;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* DARK BUTTON */
+
+.theme{
+position:fixed;
+top:20px;
+right:20px;
+cursor:pointer;
+font-size:22px;
 }
 
 </style>
-
 </head>
 
 <body>
+
+<div class="theme" onclick="toggleTheme()">
+<i class="fas fa-moon"></i>
+</div>
 
 <header>
 
@@ -143,97 +205,60 @@ color:#94a3b8;
 
 <h1>Amr Araby</h1>
 
-<p>Business Analyst | ERP Implementation Specialist</p>
+<p>Business Analyst | System Implementer</p>
+
+<a class="btn" href="Amr Araby.2026.pdf" download>
+Download CV
+</a>
+
+<div class="social">
+
+<a href="https://www.linkedin.com/in/amr-araby-725810144">
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="mailto:amraraby23@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
 
 </header>
 
 <section>
 
-<h2>Years of Experience</h2>
-
-<div class="counter" id="experience"></div>
-
-</section>
-
-<section>
-
-<h2>About Me</h2>
-
-<p style="text-align:center;max-width:700px;margin:auto">
-
-Business Analyst with experience delivering enterprise ERP implementations across
-government, telecom, and banking sectors. Skilled in requirements analysis,
-workflow design, data migration, reporting, and operational optimization.
-
-</p>
-
-</section>
-
-<section>
-
 <h2>Skills</h2>
 
-<div class="skills">
-
-<div class="card">
-<h3>Business Analysis</h3>
-<ul>
-<li>Requirements Gathering</li>
-<li>Gap Analysis</li>
-<li>Workflow Design</li>
-<li>BRD Documentation</li>
-<li>UAT Management</li>
-</ul>
+<div class="skill">
+SQL
+<div class="bar">
+<div class="progress" style="width:90%"></div>
+</div>
 </div>
 
-<div class="card">
-<h3>Data & Systems</h3>
-<ul>
-<li>SQL (PostgreSQL)</li>
-<li>Data Migration</li>
-<li>Data Validation</li>
-<li>Reporting</li>
-</ul>
+<div class="skill">
+Business Analysis
+<div class="bar">
+<div class="progress" style="width:95%"></div>
+</div>
 </div>
 
-<div class="card">
-<h3>Tools</h3>
-<ul>
-<li>JIRA</li>
-<li>Azure DevOps</li>
-<li>Postman</li>
-<li>Excel</li>
-</ul>
+<div class="skill">
+ERP Implementation
+<div class="bar">
+<div class="progress" style="width:92%"></div>
+</div>
 </div>
 
+<div class="skill">
+Workflow Design
+<div class="bar">
+<div class="progress" style="width:88%"></div>
+</div>
 </div>
 
 </section>
 
-<section>
-
-<h2>Projects</h2>
-
-<div class="projects">
-
-<div class="card">
-<h3>Iraqi Ministry of Trade ERP</h3>
-<p>Nationwide ERP system supporting 70 warehouses and around 70 million transactions annually.</p>
-</div>
-
-<div class="card">
-<h3>Zero Touch Monitoring</h3>
-<p>Telecom monitoring automation saving approximately 12,500 operational hours per month.</p>
-</div>
-
-<div class="card">
-<h3>HR Automation System</h3>
-<p>Automated HR workflows reducing approval cycle time by nearly 70%.</p>
-</div>
-
-</div>
-
-</section>
 
 <section>
 
@@ -242,127 +267,123 @@ workflow design, data migration, reporting, and operational optimization.
 <div class="timeline">
 
 <div class="timeline-item">
-
 <h3>Team Lead & Senior Implementation Specialist</h3>
-<span>Mar 2024 – Present | Cairo</span>
-
-<ul>
-<li>Lead ERP implementation initiatives and coordinate cross-functional teams.</li>
-<li>Oversee requirement validation, system configuration, and deployment activities.</li>
-<li>Support UAT cycles and ensure business alignment before go-live.</li>
-</ul>
-
-<strong>Core Achievements</strong>
-
-<ul>
-<li>Improved implementation delivery efficiency by streamlining requirement clarification and deployment cycles.</li>
-<li>Reduced post-go-live issues through structured validation and stakeholder alignment.</li>
-<li>Enhanced team coordination across business and technical units.</li>
-</ul>
-
+<p>2024 – Present | Cairo</p>
 </div>
 
 <div class="timeline-item">
-
 <h3>Business Analyst – NTG Clarity</h3>
-<span>June 2022 – Feb 2024 | Cairo</span>
-
-<ul>
-<li>Led nationwide ERP implementation for Iraqi Ministry of Trade (70 warehouses, ~70M annual transactions).</li>
-<li>Conducted requirements gathering, gap analysis, and AS-IS / TO-BE process mapping.</li>
-<li>Prepared BRD documentation and supported UAT activities.</li>
-<li>Validated system data using PostgreSQL and supported ERP configuration.</li>
-</ul>
-
-<strong>Core Achievements</strong>
-
-<ul>
-<li>Reduced order processing time by 60% and inventory loss by 70%.</li>
-<li>Improved HR approval workflows by 70% through automation.</li>
-<li>Saved 12,500 operational hours per month via telecom monitoring automation.</li>
-<li>Improved operational efficiency in banking system modules by 40%.</li>
-</ul>
-
+<p>2022 – 2024 | Cairo</p>
 </div>
 
 <div class="timeline-item">
-
 <h3>Technical Support Specialist – IST</h3>
-<span>Nov 2019 – Dec 2020 | Cairo</span>
-
-<ul>
-<li>Assisted in system validation and user support operations.</li>
-</ul>
-
-<strong>Core Achievements</strong>
-
-<ul>
-<li>Reduced recurring technical incidents through root cause identification.</li>
-<li>Improved response time and user satisfaction across supported systems.</li>
-</ul>
-
+<p>2019 – 2020 | Cairo</p>
 </div>
 
 </div>
 
 </section>
+
+
+<section>
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project-card" onclick="openProject('p1')">
+<h3>Zero Touch</h3>
+<p>Telecom Monitoring Automation</p>
+</div>
+
+<div class="project-card" onclick="openProject('p2')">
+<h3>HR App</h3>
+<p>HR Automation System</p>
+</div>
+
+<div class="project-card" onclick="openProject('p3')">
+<h3>Food Stuff ERP</h3>
+<p>Iraqi Ministry of Trade</p>
+</div>
+
+<div class="project-card" onclick="openProject('p4')">
+<h3>JIB Bank</h3>
+<p>Enterprise Banking System</p>
+</div>
+
+</div>
+
+</section>
+
 
 <section>
 
 <h2>Contact</h2>
 
-<p style="text-align:center">
+<form action="mailto:amraraby23@gmail.com" method="post">
 
-Haram, Giza, Egypt
+<input type="text" placeholder="Your Name">
 
-<br><br>
+<input type="email" placeholder="Your Email">
 
-Phone: +201011263081
+<textarea placeholder="Your Message"></textarea>
 
-<br><br>
+<button type="submit">
+Send Message
+</button>
 
-Email: amraraby23@gmail.com
-
-<br><br>
-
-<a href="Amr Araby.2026.pdf" download class="cv-btn">
-Download CV
-</a>
-
-</p>
-
-<div class="icons" style="text-align:center">
-
-<a href="https://www.linkedin.com/in/amr-araby-725810144" target="_blank">
-<i class="fa-brands fa-linkedin"></i>
-</a>
-
-<a href="mailto:amraraby23@gmail.com">
-<i class="fa-solid fa-envelope"></i>
-</a>
-
-<a href="mailto:amraraby23@gmail.com?subject=Contact from Portfolio">
-<i class="fa-solid fa-paper-plane"></i>
-</a>
-
-</div>
+</form>
 
 </section>
 
-<footer>
 
-© 2026 Amr Araby
+<div id="popup" class="popup">
 
-</footer>
+<div class="popup-content">
+
+<span class="close" onclick="closePopup()">×</span>
+
+<div id="popupBody"></div>
+
+</div>
+
+</div>
+
 
 <script>
 
-var startYear = 2019;
-var currentYear = new Date().getFullYear();
-var experience = currentYear - startYear;
+const projects={
 
-document.getElementById("experience").innerHTML =
-experience + "+ Years Professional Experience";
+p1:"<h2>Zero Touch</h2><p>Telecom automation system saving 12,500 hours monthly.</p>",
+
+p2:"<h2>HR App</h2><p>Automated HR approvals improving efficiency by 60%.</p>",
+
+p3:"<h2>Food Stuff ERP</h2><p>Nationwide ERP for 70 warehouses.</p>",
+
+p4:"<h2>JIB Bank</h2><p>Banking enterprise web system improving operations.</p>"
+
+}
+
+function openProject(id){
+
+document.getElementById("popup").style.display="flex"
+
+document.getElementById("popupBody").innerHTML=projects[id]
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none"
+
+}
+
+function toggleTheme(){
+
+document.body.classList.toggle("light")
+
+}
 
 </script>
 
