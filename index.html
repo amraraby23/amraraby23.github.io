@@ -206,6 +206,43 @@ border-radius:6px;
 font-size:14px;
 }
 
+/* DARK MODE */
+
+.dark-mode{
+background:#121212;
+color:white;
+}
+
+.dark-mode nav{
+background:#1f1f1f;
+}
+
+.dark-mode .card{
+background:#1e1e1e;
+color:white;
+}
+
+.dark-mode .popup-content{
+background:#1e1e1e;
+color:white;
+}
+
+.dark-mode input,
+.dark-mode textarea{
+background:#1e1e1e;
+color:white;
+border:1px solid #555;
+}
+
+#modeToggle{
+background:#0077ff;
+border:none;
+color:white;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
 </style>
 
 </head>
@@ -228,6 +265,8 @@ font-size:14px;
 
 </ul>
 
+<button id="modeToggle">🌙</button>
+
 </nav>
 
 <!-- HERO -->
@@ -239,9 +278,7 @@ font-size:14px;
 <h1>Amr Araby</h1>
 
 <p>
-
 Results-driven Business Analyst and ERP Implementation Specialist with 4+ years of experience delivering enterprise-scale digital transformation projects across government, banking, telecom, and HR domains.
-
 </p>
 
 <a class="btn" href="Amr Araby.2026.pdf" download>Download CV</a>
@@ -357,9 +394,7 @@ Islamic Bank System
 <h2>Contact</h2>
 
 <p>Haram, Giza, Egypt</p>
-
 <p>Phone: +201011263081</p>
-
 <p>Email: amraraby23@gmail.com</p>
 
 <p>
@@ -372,9 +407,7 @@ View Profile
 <form>
 
 <input placeholder="Name">
-
 <input placeholder="Email">
-
 <textarea placeholder="Message"></textarea>
 
 <button class="btn">Send</button>
@@ -383,88 +416,70 @@ View Profile
 
 </section>
 
-<!-- JS -->
-
 <script>
 
 const projects={
 
-p1:`
-
-<h2>Zero Touch – Telecom Network Monitoring Automation</h2>
-
+p1:`<h2>Zero Touch – Telecom Network Monitoring Automation</h2>
 <p><b>Role:</b> Business Analyst & System Implementer</p>
-
 <p>Automation system serving 40,000+ employees across 190 branches.</p>
-
 <ul>
 <li>Prepared BRD & FRD</li>
 <li>Designed monitoring workflows</li>
 <li>Validated data using PostgreSQL</li>
 </ul>
-
 <div class="metrics">
 <div class="metric-box">12500 Hours Saved</div>
 <div class="metric-box">190 Branches</div>
 <div class="metric-box">40000+ Users</div>
-</div>
+</div>`,
 
-`,
-
-p2:`
-
-<h2>HR App – NTG Clarity</h2>
-
+p2:`<h2>HR App – NTG Clarity</h2>
 <p>HR automation system for Egypt & KSA branches.</p>
-
 <div class="metrics">
 <div class="metric-box">70% Faster Approval</div>
 <div class="metric-box">60% Efficiency</div>
 <div class="metric-box">30% Less Paper</div>
-</div>
+</div>`,
 
-`,
-
-p3:`
-
-<h2>Food Stuff ERP – Iraqi Ministry of Trade</h2>
-
+p3:`<h2>Food Stuff ERP – Iraqi Ministry of Trade</h2>
 <p>Nationwide ERP across 70 warehouses.</p>
-
 <div class="metrics">
 <div class="metric-box">60% Faster Orders</div>
 <div class="metric-box">70% Less Loss</div>
 <div class="metric-box">70M Transactions</div>
-</div>
+</div>`,
 
-`,
-
-p4:`
-
-<h2>JIB – Islamic Bank System</h2>
-
+p4:`<h2>JIB – Islamic Bank System</h2>
 <p>Enterprise banking application.</p>
-
 <div class="metrics">
 <div class="metric-box">40% Efficiency</div>
 <div class="metric-box">50+ Users</div>
 <div class="metric-box">Multi Modules</div>
-</div>
-
-`
+</div>`
 
 };
 
 function openProject(id){
-
 document.getElementById("popup").style.display="flex";
 document.getElementById("popup-body").innerHTML=projects[id];
-
 }
 
 function closeProject(){
-
 document.getElementById("popup").style.display="none";
+}
+
+const toggle = document.getElementById("modeToggle");
+
+toggle.onclick = function(){
+
+document.body.classList.toggle("dark-mode");
+
+if(document.body.classList.contains("dark-mode")){
+toggle.innerHTML="☀️";
+}else{
+toggle.innerHTML="🌙";
+}
 
 }
 
@@ -477,11 +492,8 @@ document.getElementById("popup").style.display="none";
 <script>
 
 window.dataLayer = window.dataLayer || [];
-
 function gtag(){dataLayer.push(arguments);}
-
 gtag('js', new Date());
-
 gtag('config', 'G-9FZ4400SHD');
 
 </script>
